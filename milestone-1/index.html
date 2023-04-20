@@ -20,8 +20,67 @@
   <body>
     <!-- Struttura del corpo della pagina, identificata dall'id "app" -->
     <div id="app"> 
-      
+      <!-- Contenitore della barra laterale sinistra -->
+      <div id="l-side">
+        <!-- Navigazione dell'utente -->
+        <div class="user-nav">
+            <!-- Icone dell'utente -->
+            <div class="l-user-icons">
+                <img src="img/img1.jpg" alt="Avatar Utente">
+                <span class="user-name">Nome Utente</span>
+            </div>
+            <!-- Icone per le azioni dell'utente -->
+            <div class="r-user-icons">
+                <i class="fas fa-circle-notch"></i>
+                <i class="fas fa-comment-alt"></i>
+                <i class="fas fa-ellipsis-v"></i>
+            </div>
+        </div>
+
+        <!-- Notifiche -->
+        <div class="notifications">
+            <!-- Icona per disattivare le notifiche -->
+            <div class="bell-background">
+                <i class="fas fa-bell-slash"></i>
+            </div>
+            <!-- Testo delle notifiche -->
+            <div class="notifications-texts">
+                <div class="strong">Ricevi notifiche di nuovi messaggi</div>
+                <a href="#">Attiva le notifiche desktop</a>
+            </div>           
+        </div>
+
+        <!-- Barra di ricerca per le chat -->
+        <div class="chat-search">
+            <div class="search-icon">
+                <i class="fas fa-search"></i>
+            </div>
+            <input type="text" placeholder="Cerca o inizia una nuova chat">
+        </div>
+
+        <!-- Lista dei contatti -->
+        <div class="contact-list">
+            <!-- Cicla attraverso i contatti e li mostra nella lista -->
+            <div v-for="(contact, index) in contacts" class="contact">
+                <!-- Immagine dell'avatar e informazioni del contatto -->
+                <div class="l-contact">
+                    <img :src="contacts[index].avatar" alt="Avatar Contatto">
+                    <div class="info">
+                        <div class="contact-name">{{contacts[index].name}}</div>
+                        <div class="last-access">{{contacts[index].messages[0].text}}</div>
+                    </div>
+                </div>
+                <!-- Ora dell'ultimo messaggio del contatto -->
+                <div class="r-contact">
+                    <div class="message-time">{{contacts[index].messages[0].date}}</div>
+                </div>
+            </div>
+        </div>
+      </div>
+
     </div>
+
+    
      <!-- Importa file JavaScript esterno -->
     <script src="js/script.js"></script> 
   </body>
