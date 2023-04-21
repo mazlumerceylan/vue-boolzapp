@@ -254,7 +254,8 @@
   width: 100%;
   height: calc(100% - 145px);
   padding: 50px 70px;
-  background-image: url("../img/whatsapp-background.jpg");
+  background-color: red;
+  background-image: url("../img/pattern.png");
   background-position: center;
   background-size: cover;
   overflow-y: scroll;
